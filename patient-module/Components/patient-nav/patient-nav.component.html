@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-primary-subtle">
+    <div class="container-fluid">
+      <!-- Logo and brand name -->
+      <a class="navbar-brand" href="/">
+        <i class="fa-solid fa-h-square fa-bounce mx-2" style="color: #e19325; padding: 0; font-size: 25px;"></i>ospital Management System
+      </a>
+  
+      <!-- Hamburger menu button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <!-- Navigation links -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/patient/" routerLinkActive="active">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/patient/appointment" routerLinkActive="active">Appointment</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/patient/profile" routerLinkActive="active">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/patient/my-appointments" routerLinkActive="active">My Appointments</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="logout()">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  

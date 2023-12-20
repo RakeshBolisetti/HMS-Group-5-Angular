@@ -1,0 +1,33 @@
+<app-patient-nav></app-patient-nav>
+
+<div class="container mt-5">
+  <h2>Book Appointment</h2>
+
+  <form [formGroup]="appointmentForm" (ngSubmit)="submitAppointment()">
+    <div class="mb-3">
+      <label for="patientId" class="form-label">Patient ID:</label>
+      <input type="text" id="patientId" class="form-control" formControlName="patient" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="physicianId" class="form-label">Physician ID:</label>
+      <input type="text" id="physicianId" class="form-control" formControlName="physician" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="appointmentDateTime" class="form-label">Appointment Date and Time:</label>
+      <input type="datetime-local" id="appointmentDateTime" class="form-control" formControlName="appointmentDateTime" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="examinationRoom" class="form-label">Examination Room:</label>
+      <select id="examinationRoom" class="form-select" formControlName="examinationroom" required>
+        <option *ngFor="let room of examinationRooms" [value]="room">{{ room }}</option>
+      </select>
+    </div>
+
+    <!-- Add more form controls as needed -->
+
+    <button type="submit" class="btn btn-success">Book Appointment</button>
+  </form>
+</div>

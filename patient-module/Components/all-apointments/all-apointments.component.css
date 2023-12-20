@@ -1,0 +1,29 @@
+/* appointment-list.component.css */
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .card {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .card-footer {
+    border-top: none;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+  
