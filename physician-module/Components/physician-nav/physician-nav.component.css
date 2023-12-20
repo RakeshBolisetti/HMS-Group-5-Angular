@@ -1,0 +1,53 @@
+/* physician-nav.component.css */
+
+header {
+  background-color: #f8f9fa;
+  padding: 10px 0;
+}
+.nav-item{
+  cursor: pointer;
+
+}
+
+.navbar {
+  border-bottom: 1px solid #dee2e6;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  color: #007bff;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler-icon {
+  background-color: #007bff;
+}
+
+.navbar-nav {
+  margin-left: auto;
+}
+
+.nav-item {
+  margin-right: 10px;
+}
+
+.nav-link {
+  color: #007bff;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #0056b3;
+}
+
+.logout {
+  color: #dc3545;
+}
+
+.logout:hover {
+  color: #bd2130;
+}

@@ -1,0 +1,20 @@
+<app-physician-nav></app-physician-nav>
+
+<div class="appointment-container">
+    <h2>Physician Appointments</h2>
+  
+    <ul>
+      <li *ngFor="let appointment of appointments" class="appointment-item">
+        <div class="appointment-info">
+          <div class="date-time">{{ appointment.appointmentDateTime | date:'short' }}</div>
+          <div class="patient-name">{{ appointment.patient2.name }}</div>
+          <div class="patient-details">
+            <p>{{ appointment.patient2.address }}</p>
+            <p>{{ appointment.patient2.phone }}</p>
+            <p>Insurance ID: {{ appointment.patient2.insuranceid }}</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  

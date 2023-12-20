@@ -1,0 +1,55 @@
+<app-physician-nav></app-physician-nav>
+
+<div class="container mt-5">
+  <div class="row">
+    <!-- Trained In List -->
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title mb-4">Trained In List</h2>
+          <ul class="list-group">
+            <li *ngFor="let training of trainedInList" class="list-group-item">
+              <div class="mb-2">
+                <strong>Trained In:</strong> {{ training.procedures.name }}
+              </div>
+              <div>
+                <strong>Certification Date:</strong> {{ training.certificationdate | date: 'MMM d, y' }} -
+                <strong>Certification Expires:</strong> {{ training.certificationexpires | date: 'MMM d, y' }}
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Trained In -->
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title mb-4">Add Trained In</h2>
+          <form [formGroup]="trainedInForm" (ngSubmit)="addTrainedIn()">
+            <div class="mb-3">
+              <label for="treatment" class="form-label">Treatment:</label>
+              <input type="number" id="treatment" class="form-control" formControlName="treatment" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="certificationdate" class="form-label">Certification Date:</label>
+              <input type="date" id="certificationdate" class="form-control" formControlName="certificationdate"
+                required>
+            </div>
+
+            <div class="mb-3">
+              <label for="certificationexpires" class="form-label">Certification Expires:</label>
+              <input type="date" id="certificationexpires" class="form-control" formControlName="certificationexpires"
+                required>
+            </div>
+            <!-- Add more form controls as needed -->
+
+            <button type="submit" class="btn btn-primary">Add Trained In</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

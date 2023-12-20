@@ -1,0 +1,46 @@
+/* trained-in.component.css */
+
+.container {
+    max-width: 1200px;
+  }
+  
+  .trained-in-list {
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .list-group-item {
+    background-color: #ffffff;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .list-group-item:hover {
+    transform: scale(1.02);
+  }
+  
+  .add-trained-in-card {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-title {
+    color: #007bff;
+  }
+  
+  .form-control {
+    border-radius: 5px;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
