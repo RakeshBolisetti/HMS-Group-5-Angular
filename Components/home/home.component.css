@@ -1,0 +1,54 @@
+
+/* .bod{ 
+    height: 100vh;
+    width: 100vw;
+    background: url("https://vistapointe.net/images/medical-8.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* opacity: 0.8; */
+/* }  */
+/* hero.component.css */
+
+.hero {
+    background-image: url("https://vistapointe.net/images/medical-8.jpg");
+    background-size: cover;
+    background-position: left;
+    color: #2C3335;
+    text-align: center;
+    padding: 100px 0;
+    height: 100vh;
+    width: 100vw;
+    /* position: absolute; */
+  }
+  
+  .hero-content {
+    max-width: 800px;
+    /* margin: 0 auto; */
+  }
+  
+  h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+
+

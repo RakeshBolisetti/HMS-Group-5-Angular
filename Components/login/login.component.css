@@ -1,0 +1,11 @@
+
+.d-flex{
+    margin-top: 15vh;
+}
+.custom{
+    border:2px solid black;
+    min-height: 290px;
+    width: 120%;
+    border-radius: 10px;
+    box-shadow: 7px 7px 15px black;
+}
