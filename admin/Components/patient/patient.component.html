@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>All Patients</h1>
+        <div class="form-group row my-2">
+          <div class="col-md-2">
+            <input type="text" class="form-control form-control-sm" [(ngModel)]="search.ssn" placeholder="SSN">
+          </div>
+          <div class="col-md-2">
+            <input type="text" class="form-control form-control-sm" [(ngModel)]="search.name" placeholder="Name">
+          </div>
+          <div class="col-md-2">
+            <input type="text" class="form-control form-control-sm" [(ngModel)]="search.address" placeholder="Address">
+          </div>
+          <div class="col-md-2">
+            <input type="text" class="form-control form-control-sm" [(ngModel)]="search.phone" placeholder="Phone">
+          </div>
+          <div class="col-md-2">
+            <input type="text" class="form-control form-control-sm" [(ngModel)]="search.insuranceid" placeholder="Insurance ID">
+          </div>
+          <div class="col-md-2">
+            <button class="btn btn-primary btn-sm mx-2" (click)="onSearch()">Search</button>
+            <button class="btn btn-secondary btn-sm" (click)="onReset()">Reset</button>
+          </div>
+        </div>
+        <table class="table table-sm text-center table-bordered table-striped" style="table-layout: auto;">
+          <thead>
+            <tr>
+              <th (click)="sort('ssn')">SSN</th>
+              <th (click)="sort('name')">Name</th>
+              <th (click)="sort('address')">Address</th>
+              <th (click)="sort('phone')">Phone</th>
+              <th (click)="sort('insuranceid')">Insurance ID</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let patient of filteredPatients">
+              <td>{{ patient.ssn }}</td>
+              <td>{{ patient.name }}</td>
+              <td>{{ patient.address }}</td>
+              <td>{{ patient.phone }}</td>
+              <td>{{ patient.insuranceid }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

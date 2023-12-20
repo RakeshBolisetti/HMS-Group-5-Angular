@@ -1,0 +1,45 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Physicians List</h1>
+        <div class="form-group row my-2">
+          <div class="col-md-2">
+            <input type="text" class="form-control form-control-sm" [(ngModel)]="search.employeeid" placeholder="Employee ID">
+          </div>
+          <div class="col-md-4">
+            <input type="text" class="form-control form-control-sm" [(ngModel)]="search.name" placeholder="Name">
+          </div>
+          <div class="col-md-4">
+            <input type="text" class="form-control form-control-sm" [(ngModel)]="search.postion" placeholder="Position">
+          </div>
+          <div class="col-md-2">
+            <input type="text" class="form-control form-control-sm" [(ngModel)]="search.ssn" placeholder="SSN">
+          </div>
+        </div>
+        <div class="form-group row my-2">
+          <div class="col-md-12">
+            <button class="btn btn-primary btn-sm mx-2" (click)="onSearch()">Search</button>
+            <button class="btn btn-secondary btn-sm" (click)="onReset()">Reset</button>
+          </div>
+        </div>
+        <table class="table table-sm text-center table-striped table-bordered table-responsive-md">
+          <thead>
+            <tr>
+              <th class="col-md-2" (click)="sortTable('employeeid')">Employee ID</th>
+              <th (click)="sortTable('name')">Name</th>
+              <th (click)="sortTable('position')">Position</th>
+              <th (click)="sortTable('ssn')">SSN</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let physician of physicianData | orderBy: sort.key: sort.reverse">
+              <td class="col-md-2">{{ physician.employeeid }}</td>
+              <td>{{ physician.name }}</td>
+              <td>{{ physician.position }}</td>
+              <td>{{ physician.ssn }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

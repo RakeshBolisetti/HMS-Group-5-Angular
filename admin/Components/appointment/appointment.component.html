@@ -1,0 +1,77 @@
+<!-- appointment.component.html -->
+
+<div class="container mt-5">
+    <h2>Appointments</h2>
+  
+    Filter Form
+    <form (ngSubmit)="filterAppointments()" class="mb-3">
+      <div class="row">
+        <div class="col-md-4">
+          <label for="startDate">Start Date:</label>
+          <input type="date" id="startDate" class="form-control" [(ngModel)]="filter.appointmentDateTime" name="date">
+        </div>
+        <div class="col-md-4">
+          <label for="physicianId">Physician ID:</label>
+          <input type="number" id="physicianId" class="form-control" [(ngModel)]="filter.physician2.employeeid" name="physicianId">
+        </div>
+        <div class="col-md-4">
+          <label for="patientId">Patient ID:</label>
+          <input type="number" id="patientId" class="form-control" [(ngModel)]="filter.patient2.ssn" name="patientid">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary m-2">Filter</button>
+      <button  type= "button"  class="btn btn-secondary m-2" (click)="reset()">Reset</button>
+    </form>
+  
+
+    <ul class="list-group">
+      <li *ngFor="let appoint of filteredAppointments" class="list-group-item">
+        <div class="row">
+          <div class="col-md-6">
+            <strong>Appointment ID:</strong> {{ appoint.appointmentid }}
+          </div>
+          <div class="col-md-6">
+            <strong>Appointment Date:</strong> {{ appoint.appointmentDateTime | date: 'short' }}
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-md-6">
+            <strong>Physician:</strong> {{ appoint.physician2.name }}
+          </div>
+          <div class="col-md-6">
+            <strong>Patient:</strong> {{ appoint.patient2.name }}
+          </div>
+        </div>
+        <!-- Add more appointment details as needed -->
+      </li>
+    </ul>
+    <h2 class="mt-5">Add New Appointment</h2>
+
+  <form (ngSubmit)="addNewAppointment()">
+    <!-- Add form controls for new appointment as needed -->
+    <div class="mb-3">
+      <label for="physicianId">Physician ID:</label>
+      <input  name="physician" type="number" id="physicianId" [(ngModel)]="newAppointment.physician2.employeeid" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label for="patientId">Patient ID:</label>
+      <input type="number" name="patient" id="patientId" [(ngModel)]="newAppointment.patient2.ssn" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label for="appointmentDate">Appointment Date:</label>
+      <input type="datetime-local" id="appointmentDate" [(ngModel)]="newAppointment.appointmentDateTime" class="form-control" name="appoint" required>
+    </div>
+    <div class="mb-3">
+      <label for="examinationRoom" class="form-label">Examination Room:</label>
+      <select id="examinationRoom" class="form-select"  required>
+        <option *ngFor="let room of examinationRooms"  name="rooms" [(ngModel)]="newAppointment.examinationRoom">{{ room }}</option>
+      </select>
+    </div>
+    <!-- Add more form controls for new appointment as needed -->
+
+    <button type="submit" class="btn btn-success">Add Appointment</button>
+  </form>
+  
+</div>
+  
+  

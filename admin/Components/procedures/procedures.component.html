@@ -1,0 +1,61 @@
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="launchModalButton" hidden>
+    Launch demo modal
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">{{modal.title}}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          {{modal.content}}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Procedures List</h1>
+        <div class="form-group row my-2">
+          <div class="col-md-4">
+            <input type="text" class="form-control form-control-sm" [(ngModel)]="search.code" placeholder="Procedure Code">
+          </div>
+          <div class="col-md-4">
+            <input type="text" class="form-control form-control-sm" [(ngModel)]="search.name" placeholder="Procedure Name">
+          </div>
+        </div>
+        <div class="form-group row my-2">
+          <div class="col-md-12">
+            <button class="btn btn-primary btn-sm mx-2" (click)="onSearch()">Search</button>
+            <button class="btn btn-secondary btn-sm" (click)="onReset()">Reset</button>
+          </div>
+        </div>
+        <table class="table table-sm text-center table-striped table-bordered table-responsive-md">
+          <thead>
+            <tr class="text-center">
+              <th (click)="sortTable('code')">Procedure Code</th>
+              <th (click)="sortTable('name')">Name</th>
+              <th (click)="sortTable('cost')">Cost</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let procedure of proceduresData | orderBy: sort.key: sort.reverse">
+              <td>{{ procedure.code }}</td>
+              <td (click)="setModalData('Procedure Name', procedure.name)">{{ procedure.name }}</td>
+              <td>₹. {{ procedure.cost}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
